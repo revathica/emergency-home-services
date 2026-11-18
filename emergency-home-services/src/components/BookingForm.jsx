@@ -11,7 +11,7 @@ import {
 } from "react-leaflet";
 import "./BookingForm.css";
 
-const API_URL = "https://emergency-home-services-api.onrender.com";
+const API_URL = "https://emergency-home-services-api.onrender.com/api";
 
 // ==========================================
 // DISTANCE CALCULATION - HAVERSINE FORMULA

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const API_URL = "https://emergency-home-services-api.onrender.com";
+const API_URL = "https://emergency-home-services-api.onrender.com/api";
 
 export default function Login() {
   const [username, setUsername] = useState("");

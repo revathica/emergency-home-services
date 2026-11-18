@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-const API_URL = 'https://emergency-home-services-api.onrender.com';
+const API_URL = 'https://emergency-home-services-api.onrender.com/api';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
