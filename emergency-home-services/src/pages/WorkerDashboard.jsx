@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./WorkerDashboard.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://emergency-home-services-api.onrender.com";
 
 export default function WorkerDashboard() {
   const [bookings, setBookings] = useState([]);
