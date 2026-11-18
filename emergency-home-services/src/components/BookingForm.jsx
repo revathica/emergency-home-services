@@ -316,7 +316,67 @@ export default function BookingForm() {
     bookingStatus,
   ]);
 
+// TEMPORARY TEST ROUTE: KOCHI TO ALUVA
+// useEffect(() => {
+//   if (bookingStatus !== "On the Way") {
+//     setRouteCoordinates([]);
+//     setRouteError("");
+//     return;
+//   }
 
+//   let cancelled = false;
+
+//   const loadTestRoute = async () => {
+//     try {
+//       // Test Worker: Kochi
+//       const workerLat = 9.9816;
+//       const workerLon = 76.2999;
+
+//       // Test Customer: Aluva
+//       const customerLat = 10.1076;
+//       const customerLon = 76.3457;
+
+//       const url =
+//         "https://router.project-osrm.org/route/v1/driving/" +
+//         `${workerLon},${workerLat};${customerLon},${customerLat}` +
+//         "?overview=full&geometries=geojson";
+
+//       const response = await fetch(url);
+
+//       if (!response.ok) {
+//         throw new Error("Unable to load road route.");
+//       }
+
+//       const data = await response.json();
+
+//       if (data.code !== "Ok" || !data.routes?.length) {
+//         throw new Error("No road route found.");
+//       }
+
+//       const points = data.routes[0].geometry.coordinates.map(
+//         ([lon, lat]) => [lat, lon]
+//       );
+
+//       if (!cancelled) {
+//         setRouteCoordinates(points);
+//         setRouteError("");
+//       }
+//     } catch (err) {
+//       if (!cancelled) {
+//         setRouteCoordinates([]);
+//         setRouteError(
+//           "Road route is temporarily unavailable."
+//         );
+//       }
+//     }
+//   };
+
+//   loadTestRoute();
+
+//   return () => {
+//     cancelled = true;
+//   };
+// }, [bookingStatus]);
 
 
 
@@ -960,7 +1020,7 @@ export default function BookingForm() {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
                   {/* Customer location */}
-                  <Marker
+                   <Marker
                     position={[
                       bookingData.customerLatitude,
                       bookingData.customerLongitude,
@@ -990,6 +1050,25 @@ export default function BookingForm() {
                       {trackedWorker.name} — Your Worker
                     </Popup>
                   </Marker>
+                                
+             {/*  // Test Worker marker
+                  <Marker position={[9.9816, 76.2999]}>
+                    <Popup>Test Worker - Kochi</Popup>
+                  </Marker>
+
+                  // Test Customer marker
+                  <Marker position={[10.1076, 76.3457]}>
+                    <Popup>Test Customer - Aluva</Popup>
+                  </Marker>
+
+                  // Road route line
+                  {routeCoordinates.length > 0 && (
+                    <Polyline
+                      positions={routeCoordinates}
+                      pathOptions={{ color: "blue", weight: 5 }}
+                    />
+                  )} */}
+
                 </MapContainer>
                                 
                   {routeError && (
