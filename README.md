@@ -132,7 +132,7 @@ Actual assignment and tracking behavior depends on the configured backend and th
 
 This project was developed for learning and project demonstration purposes.
 
-##🌐 Live Demo
+## 🌐 Live Demo
 
 Live Website: [Click here to watch the Live Website](https://emergency-home-services.vercel.app/)
 
